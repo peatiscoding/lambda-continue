@@ -22,7 +22,7 @@ export const handler = (event, context) => {
         return i
       }
 
-      // do long running process
+      // do long running process here!
     }
   }, {
     cycleMinutes: 12,           // execute at maximum 12 minutes per cycle
@@ -30,5 +30,7 @@ export const handler = (event, context) => {
     lambdaFunctionName: 'Your-Lambda-Function-Name!',
     lambda: new AWS.Lambda(),   // customize your Lambda here!
   }))
+
+  return h(event, context)
 }
 ```
