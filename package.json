@@ -2,7 +2,7 @@
   "name": "lambda-continue",
   "version": "1.0.1",
   "description": "Chaining lambda calls",
-  "main": "index.js",
+  "main": "lib/index.js",
   "scripts": {
     "build": "tsc",
     "test": "jest --config=jestconfig.json --passWithNoTests",
