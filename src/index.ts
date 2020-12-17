@@ -38,6 +38,7 @@ export interface LambdaContinueOptions {
   cycleAllowed: number
   lambdaFunctionName: string
   lambda?: AWS.Lambda
+  extraPayload?: { [key: string]: any }
 }
 
 export const createHandler = <C>(runner: ExecuteCycle<C>, options: LambdaContinueOptions): Handler => async (event): Promise<void> => {
@@ -81,6 +82,7 @@ export const createHandler = <C>(runner: ExecuteCycle<C>, options: LambdaContinu
     FunctionName: options.lambdaFunctionName,
     InvocationType: 'Event',
     Payload: JSON.stringify({
+      ...options.extraPayload,
       offset: nextOffset,
       cycleAllowed: cycleAllowed - 1,
       cycleMinutes,
