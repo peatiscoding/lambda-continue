@@ -9,7 +9,7 @@ npm i --save lambda-continue
 
 ## Usage
 
-```
+```ts
 import { createHandler } from 'lambda-continue'
 
 // Your lambda Handler
