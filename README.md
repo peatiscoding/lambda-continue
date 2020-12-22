@@ -22,6 +22,8 @@ export const handler = (event, context) => {
         return i
       }
 
+      await continueContext.assertCancellation(offset)
+
       // do long running process here!
     }
   }, {
